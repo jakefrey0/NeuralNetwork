@@ -1,0 +1,6 @@
+C:\Users\Elite\Documents\SharpDevelop Projects\NeuralNet\NeuralNet\bin\Debug\NeuralNet.exe.config
+C:\Users\Elite\Documents\SharpDevelop Projects\NeuralNet\NeuralNet\bin\Debug\NeuralNet.exe
+C:\Users\Elite\Documents\SharpDevelop Projects\NeuralNet\NeuralNet\bin\Debug\NeuralNet.pdb
+C:\Users\Elite\Documents\SharpDevelop Projects\NeuralNet\NeuralNet\obj\Debug\NeuralNet.csprojResolveAssemblyReference.cache
+C:\Users\Elite\Documents\SharpDevelop Projects\NeuralNet\NeuralNet\obj\Debug\NeuralNet.exe
+C:\Users\Elite\Documents\SharpDevelop Projects\NeuralNet\NeuralNet\obj\Debug\NeuralNet.pdb

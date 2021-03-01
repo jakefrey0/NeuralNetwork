@@ -1,0 +1,18 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+# SharpDevelop 4.4
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeuralNet", "NeuralNet\NeuralNet.csproj", "{70AE6F4B-00F1-4D9B-BC42-D4281F50F53B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{70AE6F4B-00F1-4D9B-BC42-D4281F50F53B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70AE6F4B-00F1-4D9B-BC42-D4281F50F53B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70AE6F4B-00F1-4D9B-BC42-D4281F50F53B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70AE6F4B-00F1-4D9B-BC42-D4281F50F53B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+EndGlobal
