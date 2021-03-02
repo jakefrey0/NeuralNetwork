@@ -16,21 +16,18 @@ namespace NeuralNet {
 	public class Program {
 		
 		/*
-		private const Byte loopCtrMax=3;
-		private const Single learnRateIncrement=0.00001F;
-//		private static UInt16 hlSize=64;
-		private static Single learnRate=0.00033F;
-		private static Dictionary<Double,List<Double>> times=new Dictionary<Double,List<Double>>(1000);
+		private const Byte loopCtrMax=19;
+		private static Byte hlSize=64;
+		private static Dictionary<UInt16,List<UInt32>> times=new Dictionary<UInt16,List<UInt32>>(63);
 		private static Byte loopCtr=Program.loopCtrMax;
-		private List<Double> currTimes=new List<Double>();
 		*/
+		
+		private static Random r=new Random();
 		
 		/// <summary>
 		/// Machine learning attempt 3
 		/// </summary>
 		public static void Main (String[] args) {
-			
-			DateTime start0=DateTime.UtcNow;
 			
 			NeuralNetwork nn=new NeuralNetwork(new UInt16[]{1089,17,17,4})/*{descent=Program.learnRate}*/;
 			
@@ -66,7 +63,6 @@ namespace NeuralNet {
 				files=Directory.GetFiles(dir);
 				file=files[r.Next(0,files.Length)];
 				
-				
 				desiredAnswer[Byte.Parse(dir.Last().ToString())]=255;
 				
 //				desiredAnswer=new Byte[]{255,0,0,0,0,0,0,0,0,0};
@@ -82,19 +78,19 @@ namespace NeuralNet {
 				if (prediction==desiredPrediction) ++correct;
 				else ++incorrect;
 				Console.WriteLine("Answer: "+prediction.ToString()+", desired: "+desiredPrediction.ToString()+", R/W: "+correct.ToString()+'/'+incorrect.ToString()+"("+ts.TotalMilliseconds.ToString()+"ms, "+file+')');
+				/*UInt32 total=correct+incorrect;
 				
-				/*
-				if (correct>incorrect||((correct+incorrect)>13000)) {
+				if ((correct>incorrect&&((total)>8))||((total)>13000)) {
 					
-					Console.WriteLine("learnRate:"+Program.learnRate.ToString());
+					Console.WriteLine("HL size:"+Program.hlSize.ToString());
 					
-					if (Program.learnRate==0.06F) {
+					if (Program.hlSize==1) {
 						
 						List<String> lines=new List<String>();
-						foreach (KeyValuePair<Double,List<Double>> kvp in Program.times) {
-							String str="HL size: "+kvp.Key.ToString()+",Time (sec): ";
-							foreach (Double dbl in kvp.Value)
-								str+=dbl.ToString()+',';
+						foreach (KeyValuePair<UInt16,List<UInt32>> kvp in Program.times) {
+							String str="HL size: "+kvp.Key.ToString()+",Iterations (avg:"+kvp.Value.Select(x=>Convert.ToInt32(x)).Average().ToString()+"): ";
+							foreach (UInt32 num in kvp.Value)
+								str+=num.ToString()+',';
 							lines.Add(str);
 						}
 						
@@ -103,21 +99,21 @@ namespace NeuralNet {
 						
 					}
 					
-					ts=DateTime.UtcNow-start0;
 					if (Program.loopCtr==Program.loopCtrMax)
-						Program.times.Add(Program.learnRate,new List<Double>(Program.loopCtrMax));
+						Program.times.Add(Program.hlSize,new List<UInt32>(Program.loopCtrMax));
 					
-					times[Program.learnRate].Add(ts.TotalSeconds);
+					times[Program.hlSize].Add(total);
 					
 					if (Program.loopCtr==0) {
 					
-						Program.learnRate+=Program.learnRateIncrement;
+						--Program.hlSize;
 						Program.loopCtr=Program.loopCtrMax;
-						Program.Main(args);
-						return;
 					
 					}
-					else --Program.loopCtr;
+					else--Program.loopCtr;
+					
+					Program.Main(args);
+					return;
 					
 				}*/
 				if (step&&Console.ReadKey().Key==ConsoleKey.Escape) break;
