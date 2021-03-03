@@ -29,7 +29,7 @@ namespace NeuralNet {
 		/// </summary>
 		public static void Main (String[] args) {
 			
-			NeuralNetwork nn=new NeuralNetwork(new UInt16[]{1089,17,17,4})/*{descent=Program.learnRate}*/;
+			NeuralNetwork nn=new NeuralNetwork(new UInt16[]{1089,16,24,4})/*{descent=Program.learnRate}*/;
 			
 			DateTime start;
 			TimeSpan ts;

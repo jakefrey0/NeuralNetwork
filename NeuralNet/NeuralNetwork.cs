@@ -162,7 +162,7 @@ namespace NeuralNet {
 					
 					n.toDescend=sum*((Single)(n.activation*n.bias)).sigmoidF();
 //					Console.WriteLine("toDescend:"+n.toDescend.ToString()+",sum:"+sum.ToString()+",activation:"+n.activation.ToString()+",bias:"+n.bias.ToString());
-					try { n.bias-=(SByte)(NeuralNetwork.descent*(n.toDescend)); }
+					try { n.bias-=(SByte)(NeuralNetwork.descent*(n.toDescend)); }//TODO:: check if this can be better calculated (more specific?)
 					catch { 
 						
 						if (onFail!=null)
